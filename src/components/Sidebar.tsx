@@ -63,6 +63,7 @@ export default function Sidebar({ user, open, onClose }: SidebarProps) {
               key={item.to}
               to={item.to}
               className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+              onClick={onClose}
             >
               <span className="nav-icon">{item.icon}</span>
               {item.label}
@@ -81,6 +82,7 @@ export default function Sidebar({ user, open, onClose }: SidebarProps) {
               key={item.to}
               to={item.to}
               className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+              onClick={onClose}
             >
               <span className="nav-icon">{item.icon}</span>
               {item.label}
@@ -89,6 +91,7 @@ export default function Sidebar({ user, open, onClose }: SidebarProps) {
           <NavLink
             to="/"
             className="nav-link"
+            onClick={onClose}
           >
             <span className="nav-icon">↩</span>
             Wyloguj się
