@@ -5,6 +5,7 @@ interface TopbarProps {
   user: User;
   title: string;
   notifications: Notification[];
+  onMenuClick: () => void;
 }
 
 const notifIcons: Record<string, string> = {
@@ -14,13 +15,14 @@ const notifIcons: Record<string, string> = {
   success: '✅',
 };
 
-export default function Topbar({ user, title, notifications }: TopbarProps) {
+export default function Topbar({ user, title, notifications, onMenuClick }: TopbarProps) {
   const [showNotif, setShowNotif] = useState(false);
   const unread = notifications.filter((n) => !n.read).length;
 
   return (
     <header className="topbar">
       <div className="topbar-left">
+        <button className="topbar-hamburger" onClick={onMenuClick}>&#9776;</button>
         <h1 className="topbar-title">{title}</h1>
       </div>
 
@@ -38,6 +40,7 @@ export default function Topbar({ user, title, notifications }: TopbarProps) {
 
           {showNotif && (
             <div
+              className="topbar-notif-dropdown"
               style={{
                 position: 'absolute',
                 top: '46px',

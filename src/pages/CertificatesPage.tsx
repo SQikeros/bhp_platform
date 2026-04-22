@@ -10,7 +10,7 @@ function statusColor(status: Certificate['status']) {
 
 function CertRow({ cert }: { cert: Certificate }) {
   return (
-    <div style={{
+    <div className="cert-list-row" style={{
       display: 'grid',
       gridTemplateColumns: '180px 1fr 130px 130px 120px 160px',
       alignItems: 'center',
@@ -77,7 +77,7 @@ export default function CertificatesPage() {
       </div>
 
       {/* Summary */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 28 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 14, marginBottom: 28 }}>
         {[
           { label: 'Ważne', count: valid.length, color: 'var(--success)', bg: 'var(--success-bg)', border: 'var(--success)' },
           { label: 'Wygasają wkrótce', count: expiring.length, color: 'var(--warning)', bg: 'var(--warning-bg)', border: 'var(--warning)' },
@@ -124,7 +124,7 @@ export default function CertificatesPage() {
           </div>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
             {/* Table header */}
-            <div style={{
+            <div className="cert-list-header" style={{
               display: 'grid',
               gridTemplateColumns: '180px 1fr 130px 130px 120px 160px',
               gap: 20,

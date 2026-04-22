@@ -44,7 +44,7 @@ export default function AdminPage() {
       </div>
 
       {/* System stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 28 }}>
+      <div className="test-stats-grid" style={{ gap: 14, marginBottom: 28 }}>
         {systemStats.map((s) => (
           <div key={s.label} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '18px 20px', boxShadow: 'var(--shadow-sm)' }}>
             <div style={{ fontSize: 28, marginBottom: 10 }}>{s.icon}</div>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Topbar from '../components/Topbar';
@@ -17,17 +18,20 @@ const pageTitles: Record<string, string> = {
 
 export default function AppLayout() {
   const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const title = pageTitles[location.pathname] ?? 'SafeWork BHP';
 
-  // Simulate: employer panel for specific routes
   const isEmployerView = ['/pracodawca', '/pracownicy', '/raporty', '/admin'].includes(location.pathname);
   const user = isEmployerView ? employerUser : currentUser;
 
   return (
     <div className="app-shell">
-      <Sidebar user={user} />
+      {sidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+      <Sidebar user={user} open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <main className="main-content">
-        <Topbar user={user} title={title} notifications={notifications} />
+        <Topbar user={user} title={title} notifications={notifications} onMenuClick={() => setSidebarOpen(true)} />
         <div className="page">
           <Outlet />
         </div>

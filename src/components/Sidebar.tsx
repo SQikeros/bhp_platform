@@ -3,6 +3,8 @@ import type { User } from '../types';
 
 interface SidebarProps {
   user: User;
+  open?: boolean;
+  onClose?: () => void;
 }
 
 interface NavItem {
@@ -30,7 +32,7 @@ const generalNav: NavItem[] = [
   { to: '/uslugi', label: 'Usługi BHP', icon: '🛡️' },
 ];
 
-export default function Sidebar({ user }: SidebarProps) {
+export default function Sidebar({ user, open, onClose }: SidebarProps) {
   const mainNav = user.role === 'pracodawca' || user.role === 'admin' ? employerNav : employeeNav;
 
   const roleLabel =
@@ -39,7 +41,7 @@ export default function Sidebar({ user }: SidebarProps) {
     : 'Administrator';
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar${open ? ' open' : ''}`}>
       {/* Logo */}
       <NavLink to="/" className="sidebar-logo" style={{ textDecoration: 'none', display: 'block' }}>
         <div className="sidebar-logo-mark">

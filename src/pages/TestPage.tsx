@@ -79,7 +79,7 @@ export default function TestPage() {
               <span className="badge badge-warning">Wymagany</span>
             </div>
             <div style={{ padding: '20px 24px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 20 }}>
+              <div className="test-stats-grid" style={{ gap: 16, marginBottom: 20 }}>
                 {[
                   { label: 'Pytań', value: sampleTest.questions.length },
                   { label: 'Próg zdania', value: `${sampleTest.passThreshold}%` },

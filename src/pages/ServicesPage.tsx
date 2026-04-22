@@ -75,7 +75,7 @@ export default function ServicesPage() {
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, marginBottom: 20, textTransform: 'uppercase' }}>
           Dlaczego warto wybrać nasze usługi?
         </h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
+        <div className="grid-auto" style={{ gap: 20 }}>
           {[
             { icon: '⚖️', title: 'Zgodność prawna', desc: 'Wszystkie szkolenia i dokumenty zgodne z aktualnym Kodeksem Pracy i rozporządzeniami MRPiPS.' },
             { icon: '🎓', title: 'Certyfikowani trenerzy', desc: 'Wyłącznie szkoleniowcy posiadający wymagane kwalifikacje i aktualne licencje.' },

@@ -72,7 +72,7 @@ export default function ReportsPage() {
         <div className="section-header">
           <h3 className="section-title">Dostępne raporty</h3>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 14, marginBottom: 28 }}>
+        <div className="grid-auto" style={{ gap: 14, marginBottom: 28 }}>
           {[
             { title: 'Raport zgodności BHP — Kwiecień 2025', icon: '📊', type: 'PDF', date: '2025-04-21', size: '1.2 MB' },
             { title: 'Zestawienie szkoleń — I kwartał 2025', icon: '📚', type: 'XLSX', date: '2025-04-01', size: '340 KB' },

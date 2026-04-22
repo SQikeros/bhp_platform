@@ -55,7 +55,7 @@ export default function TrainingsPage() {
       </div>
 
       {/* Summary strip */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 24 }}>
+      <div className="test-stats-grid" style={{ gap: 12, marginBottom: 24 }}>
         {[
           { label: 'Wszystkich', value: counts.total, color: 'var(--info)', bg: 'var(--info-bg)' },
           { label: 'W trakcie', value: counts.active, color: 'var(--accent)', bg: 'var(--accent-light)' },

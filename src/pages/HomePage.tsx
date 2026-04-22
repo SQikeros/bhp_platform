@@ -154,7 +154,7 @@ export default function HomePage() {
 
       {/* Specialist section */}
       <div id="o-nas" style={{ background: 'rgba(255,193,7,0.06)', borderTop: '1px solid rgba(255,193,7,0.1)', borderBottom: '1px solid rgba(255,193,7,0.1)' }}>
-        <div className="landing-section" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+        <div className="landing-section landing-specialist-grid">
           <div>
             <div className="landing-hero-eyebrow">Specjalista prowadzący</div>
             <h2 className="landing-section-title">Paula Żerko</h2>
