@@ -76,7 +76,7 @@ export default function TestPage() {
                   Instruktaż stanowiskowy — hala produkcyjna
                 </div>
               </div>
-              <span className="badge badge-warning">Wymagany</span>
+              <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5 }}>Wymagany</span>
             </div>
             <div style={{ padding: '20px 24px' }}>
               <div className="test-stats-grid" style={{ gap: 16, marginBottom: 20 }}>
@@ -92,17 +92,17 @@ export default function TestPage() {
                   </div>
                 ))}
               </div>
-              <div style={{ padding: '12px 14px', background: 'var(--info-bg)', borderRadius: 'var(--radius)', marginBottom: 20, fontSize: 13, color: 'var(--info)', lineHeight: 1.5 }}>
-                ℹ️ Zapoznaj się ze szkoleniem przed przystąpieniem do testu. Aby zaliczyć test, musisz uzyskać minimum <strong>{sampleTest.passThreshold}%</strong> poprawnych odpowiedzi.
+              <div style={{ background: 'var(--bg-2)', border: '1px solid var(--border)', borderLeft: '3px solid var(--info)', borderRadius: 'var(--radius)', padding: '12px 14px', marginBottom: 20, fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                Zapoznaj się ze szkoleniem przed przystąpieniem do testu. Aby zaliczyć test, musisz uzyskać minimum <strong>{sampleTest.passThreshold}%</strong> poprawnych odpowiedzi.
               </div>
               <div style={{ display: 'flex', gap: 10 }}>
                 <button
                   className="btn btn-primary btn-lg"
                   onClick={() => { setPhase('active'); setTimeLeft(sampleTest.timeLimit * 60); setAnswers({}); setCurrentQ(0); }}
                 >
-                  📝 Rozwiąż test
+                  Rozwiąż test
                 </button>
-                <button className="btn btn-outline">📚 Wróć do szkolenia</button>
+                <button className="btn btn-outline">Wróć do szkolenia</button>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function TestPage() {
           </div>
 
           <div className={`result-verdict ${passed ? 'pass' : 'fail'}`}>
-            {passed ? '✅ ZALICZONY' : '❌ NIEZALICZONY'}
+            {passed ? 'ZALICZONY' : 'NIEZALICZONY'}
           </div>
 
           <p className="result-summary">
@@ -196,13 +196,13 @@ export default function TestPage() {
 
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
             {passed ? (
-              <button className="btn btn-success btn-lg">🏅 Pobierz certyfikat</button>
+              <button className="btn btn-success btn-lg">Pobierz certyfikat</button>
             ) : (
               <button
                 className="btn btn-primary btn-lg"
                 onClick={() => { setPhase('active'); setTimeLeft(sampleTest.timeLimit * 60); setAnswers({}); setCurrentQ(0); }}
               >
-                🔄 Spróbuj ponownie
+                Spróbuj ponownie
               </button>
             )}
             <button className="btn btn-outline" onClick={() => setPhase('intro')}>← Powrót do testów</button>

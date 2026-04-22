@@ -268,10 +268,21 @@ img { display: block; max-width: 100%; }
   --text-primary: #f0f0f0;
   --text-secondary: rgba(240,240,240,0.55);
   --text-muted: rgba(240,240,240,0.35);
-  --success-bg: rgba(24,165,88,0.13);
-  --warning-bg: rgba(249,115,22,0.13);
-  --danger-bg: rgba(220,38,38,0.13);
-  --info-bg: rgba(37,99,235,0.13);
+
+  /* Muted semantic colors for dark bg — desaturated, softer */
+  --accent: #C49A18;
+  --accent-dark: #AE8814;
+  --accent-light: rgba(196,154,24,0.12);
+  --accent-glow: rgba(196,154,24,0.2);
+  --success: #5A9E74;
+  --warning: #B8763A;
+  --danger: #A84848;
+  --info: #4A78B0;
+  --success-bg: rgba(90,158,116,0.1);
+  --warning-bg: rgba(184,118,58,0.1);
+  --danger-bg: rgba(168,72,72,0.1);
+  --info-bg: rgba(74,120,176,0.1);
+
   --shadow-sm: 0 1px 4px rgba(0,0,0,0.4);
   --shadow: 0 4px 16px rgba(0,0,0,0.4);
   margin-left: var(--sidebar-width);
@@ -528,57 +539,23 @@ img { display: block; max-width: 100%; }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 20px 24px;
   box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
 }
-
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-}
-
-.stat-card.accent::before { background: var(--accent); }
-.stat-card.success::before { background: var(--success); }
-.stat-card.warning::before { background: var(--warning); }
-.stat-card.danger::before { background: var(--danger); }
-.stat-card.info::before { background: var(--info); }
-
-.stat-card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.stat-card.accent .stat-card-icon { background: var(--accent-light); }
-.stat-card.success .stat-card-icon { background: var(--success-bg); }
-.stat-card.warning .stat-card-icon { background: var(--warning-bg); }
-.stat-card.danger .stat-card-icon { background: var(--danger-bg); }
-.stat-card.info .stat-card-icon { background: var(--info-bg); }
 
 .stat-card-value {
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .stat-card-label {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -586,8 +563,21 @@ img { display: block; max-width: 100%; }
 .stat-card-sub {
   font-size: 11.5px;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 3px;
 }
+
+.stat-card-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.stat-card.accent .stat-card-indicator { background: var(--accent); }
+.stat-card.success .stat-card-indicator { background: var(--success); }
+.stat-card.warning .stat-card-indicator { background: var(--warning); }
+.stat-card.danger .stat-card-indicator { background: var(--danger); }
+.stat-card.info .stat-card-indicator { background: var(--info); }
 
 /* ─── Status Badge ───────────────────────────────────────────────────────── */
 .badge {
@@ -611,22 +601,22 @@ img { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 
-.badge-success { background: var(--success-bg); color: #156534; }
+.badge-success { background: color-mix(in srgb, var(--success) 12%, transparent); color: var(--success); border: 1px solid color-mix(in srgb, var(--success) 25%, transparent); }
 .badge-success::before { background: var(--success); }
 
-.badge-warning { background: var(--warning-bg); color: #9A3412; }
+.badge-warning { background: color-mix(in srgb, var(--warning) 12%, transparent); color: var(--warning); border: 1px solid color-mix(in srgb, var(--warning) 25%, transparent); }
 .badge-warning::before { background: var(--warning); }
 
-.badge-danger { background: var(--danger-bg); color: #991B1B; }
+.badge-danger { background: color-mix(in srgb, var(--danger) 12%, transparent); color: var(--danger); border: 1px solid color-mix(in srgb, var(--danger) 25%, transparent); }
 .badge-danger::before { background: var(--danger); }
 
-.badge-info { background: var(--info-bg); color: #1D4ED8; }
+.badge-info { background: color-mix(in srgb, var(--info) 12%, transparent); color: var(--info); border: 1px solid color-mix(in srgb, var(--info) 25%, transparent); }
 .badge-info::before { background: var(--info); }
 
-.badge-neutral { background: var(--bg-2); color: var(--text-secondary); }
+.badge-neutral { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
 .badge-neutral::before { background: var(--text-muted); }
 
-.badge-accent { background: var(--accent-light); color: #8B6800; }
+.badge-accent { background: rgba(255,193,7,0.1); color: rgba(255,193,7,0.85); border: 1px solid rgba(255,193,7,0.2); }
 .badge-accent::before { background: var(--accent); }
 
 /* ─── Progress Bar ───────────────────────────────────────────────────────── */

@@ -22,7 +22,7 @@ export default function EmployerDashboardPage() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
-            <button className="btn btn-outline btn-sm">📊 Eksportuj raport</button>
+            <button className="btn btn-outline btn-sm">Eksportuj raport</button>
             <button className="btn btn-primary">+ Dodaj pracownika</button>
           </div>
         </div>
@@ -30,10 +30,12 @@ export default function EmployerDashboardPage() {
 
       {/* Alert */}
       {employerStats.nonCompliant > 0 && (
-        <div style={{ background: 'var(--danger-bg)', border: '1px solid var(--danger)', borderLeft: '4px solid var(--danger)', borderRadius: 'var(--radius)', padding: '12px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10, fontSize: 13.5 }}>
-          <strong style={{ color: 'var(--danger)' }}>{employerStats.nonCompliant} pracowników</strong>
-          <span style={{ color: 'var(--danger)', opacity: 0.8 }}>nie spełnia wymogów BHP. Wymagane natychmiastowe działanie.</span>
-          <button className="btn btn-danger btn-sm" style={{ marginLeft: 'auto' }}>Wyślij przypomnienie</button>
+        <div style={{ background: 'var(--bg-2)', border: '1px solid var(--border)', borderLeft: '3px solid var(--danger)', borderRadius: 'var(--radius)', padding: '12px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10, fontSize: 13.5 }}>
+          <div style={{ flex: 1 }}>
+            <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{employerStats.nonCompliant} pracowników</span>
+            <span style={{ color: 'var(--text-secondary)', marginLeft: 6 }}>nie spełnia wymogów BHP. Wymagane działanie.</span>
+          </div>
+          <button className="btn btn-outline btn-sm">Wyślij przypomnienie</button>
         </div>
       )}
 
@@ -109,8 +111,8 @@ export default function EmployerDashboardPage() {
                       <td><StatusBadge status={emp.complianceStatus} /></td>
                       <td onClick={(e) => e.stopPropagation()}>
                         <div style={{ display: 'flex', gap: 6 }}>
-                          <button className="btn btn-outline btn-sm" onClick={() => setSelected(emp)}>👁</button>
-                          <button className="btn btn-primary btn-sm">✉️</button>
+                          <button className="btn btn-outline btn-sm" onClick={() => setSelected(emp)}>Widok</button>
+                          <button className="btn btn-primary btn-sm">E-mail</button>
                         </div>
                       </td>
                     </tr>
@@ -154,10 +156,10 @@ export default function EmployerDashboardPage() {
                   </div>
                 ))}
                 <div style={{ marginTop: 14, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  <button className="btn btn-primary btn-sm">📋 Przypisz szkolenie</button>
-                  <button className="btn btn-outline btn-sm">✉️ Wyślij e-mail</button>
+                  <button className="btn btn-primary btn-sm">Przypisz szkolenie</button>
+                  <button className="btn btn-outline btn-sm">Wyślij e-mail</button>
                   {selected.complianceStatus === 'niezgodny' && (
-                    <button className="btn btn-danger btn-sm">⚠️ Raport naruszenia</button>
+                    <button className="btn btn-danger btn-sm">Raport naruszenia</button>
                   )}
                 </div>
               </div>
@@ -200,10 +202,10 @@ export default function EmployerDashboardPage() {
           <div className="card">
             <div className="card-header"><span className="card-title">Szybkie akcje</span></div>
             <div className="card-body" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <button className="btn btn-primary w-full" style={{ justifyContent: 'center' }}>📢 Wyślij przypomnienie do wszystkich</button>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>📄 Generuj raport zgodności</button>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>📋 Zaplanuj szkolenie grupowe</button>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>⬇ Eksportuj dane do CSV</button>
+              <button className="btn btn-primary w-full" style={{ justifyContent: 'center' }}>Wyślij przypomnienie do wszystkich</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Generuj raport zgodności</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Zaplanuj szkolenie grupowe</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Eksportuj dane do CSV</button>
             </div>
           </div>
         </div>

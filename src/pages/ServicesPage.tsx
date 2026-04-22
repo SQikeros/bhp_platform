@@ -11,7 +11,7 @@ export default function ServicesPage() {
               Kompleksowa obsługa bhp prowadzona przez certyfikowaną specjalistkę Paula Żerko
             </p>
           </div>
-          <button className="btn btn-primary">📞 Skontaktuj się</button>
+          <button className="btn btn-primary">Skontaktuj się</button>
         </div>
       </div>
 
@@ -34,8 +34,8 @@ export default function ServicesPage() {
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, flexShrink: 0 }}>
-          <button className="btn btn-primary">📞 Zadzwoń teraz</button>
-          <button className="btn btn-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.2)' }}>✉️ Napisz e-mail</button>
+          <button className="btn btn-primary">Zadzwoń teraz</button>
+          <button className="btn btn-outline" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.2)' }}>Napisz e-mail</button>
         </div>
       </div>
 
@@ -92,18 +92,18 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ marginTop: 28, background: 'var(--accent)', borderRadius: 'var(--radius-xl)', padding: '28px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
+      <div style={{ marginTop: 28, background: 'var(--surface)', border: '1px solid var(--border)', borderLeft: '4px solid var(--accent)', borderRadius: 'var(--radius-xl)', padding: '28px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap' }}>
         <div>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, color: 'var(--dark)', marginBottom: 4 }}>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 4 }}>
             Gotowy na bezpieczne miejsce pracy?
           </div>
-          <div style={{ fontSize: 14, color: 'rgba(28,28,28,0.7)' }}>
+          <div style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
             Skontaktuj się z nami i umów bezpłatną konsultację · paula.zerko@bhp-platform.pl
           </div>
         </div>
         <div style={{ display: 'flex', gap: 10 }}>
-          <button className="btn btn-dark btn-lg">📞 Zadzwoń: +48 123 456 789</button>
-          <button className="btn btn-outline btn-lg">✉️ Wyślij zapytanie</button>
+          <button className="btn btn-primary btn-lg">Zadzwoń: +48 123 456 789</button>
+          <button className="btn btn-outline btn-lg">Wyślij zapytanie</button>
         </div>
       </div>
     </>

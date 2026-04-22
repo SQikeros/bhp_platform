@@ -12,8 +12,8 @@ export default function ReportsPage() {
             <p className="page-subtitle">Zestawienia szkoleń, certyfikatów i zgodności BHP firmy</p>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
-            <button className="btn btn-outline btn-sm">📅 Wybierz okres</button>
-            <button className="btn btn-primary">⬇ Eksportuj PDF</button>
+            <button className="btn btn-outline btn-sm">Wybierz okres</button>
+            <button className="btn btn-primary">Eksportuj PDF</button>
           </div>
         </div>
       </div>
@@ -24,15 +24,15 @@ export default function ReportsPage() {
         <div className="card">
           <div className="card-header"><span className="card-title">Ogólna zgodność</span></div>
           <div className="card-body" style={{ textAlign: 'center' }}>
-            <div style={{ width: 120, height: 120, borderRadius: '50%', border: '8px solid var(--accent)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', background: 'var(--accent-light)' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontSize: 32, fontWeight: 800, color: 'var(--dark)', lineHeight: 1 }}>68%</div>
-              <div style={{ fontSize: 11, color: 'var(--text-secondary)', fontWeight: 600, textTransform: 'uppercase' }}>zgodność</div>
+            <div style={{ width: 120, height: 120, borderRadius: '50%', border: '6px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 32, fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1 }}>68%</div>
+              <div style={{ fontSize: 11, color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase' }}>zgodność</div>
             </div>
             <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
               Wymagane: min. <strong>80%</strong> dla pełnej zgodności z przepisami BHP.
             </p>
-            <div style={{ marginTop: 14, padding: '10px', background: 'var(--warning-bg)', borderRadius: 'var(--radius-sm)', fontSize: 12.5, color: '#9A3412' }}>
-              ⚠️ Poniżej wymaganego progu — podjąć działania
+            <div style={{ marginTop: 14, background: 'var(--bg-2)', border: '1px solid var(--border)', borderLeft: '3px solid var(--warning)', borderRadius: 'var(--radius-sm)', padding: '10px', fontSize: 12.5, color: 'var(--text-secondary)' }}>
+              Poniżej wymaganego progu — podjąć działania
             </div>
           </div>
         </div>
@@ -74,23 +74,20 @@ export default function ReportsPage() {
         </div>
         <div className="grid-auto" style={{ gap: 14, marginBottom: 28 }}>
           {[
-            { title: 'Raport zgodności BHP — Kwiecień 2025', icon: '📊', type: 'PDF', date: '2025-04-21', size: '1.2 MB' },
-            { title: 'Zestawienie szkoleń — I kwartał 2025', icon: '📚', type: 'XLSX', date: '2025-04-01', size: '340 KB' },
-            { title: 'Rejestr wypadków przy pracy 2025', icon: '⚠️', type: 'PDF', date: '2025-03-31', size: '205 KB' },
-            { title: 'Certyfikaty — stan na 2025-04-21', icon: '🏅', type: 'PDF', date: '2025-04-21', size: '890 KB' },
-            { title: 'Ocena ryzyka zawodowego — Produkcja', icon: '🔍', type: 'DOCX', date: '2025-02-15', size: '1.8 MB' },
-            { title: 'Protokół z audytu BHP — Marzec 2025', icon: '📋', type: 'PDF', date: '2025-03-20', size: '2.1 MB' },
+            { title: 'Raport zgodności BHP — Kwiecień 2025', type: 'PDF', date: '2025-04-21', size: '1.2 MB' },
+            { title: 'Zestawienie szkoleń — I kwartał 2025', type: 'XLSX', date: '2025-04-01', size: '340 KB' },
+            { title: 'Rejestr wypadków przy pracy 2025', type: 'PDF', date: '2025-03-31', size: '205 KB' },
+            { title: 'Certyfikaty — stan na 2025-04-21', type: 'PDF', date: '2025-04-21', size: '890 KB' },
+            { title: 'Ocena ryzyka zawodowego — Produkcja', type: 'DOCX', date: '2025-02-15', size: '1.8 MB' },
+            { title: 'Protokół z audytu BHP — Marzec 2025', type: 'PDF', date: '2025-03-20', size: '2.1 MB' },
           ].map((r) => (
-            <div key={r.title} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '16px', display: 'flex', gap: 12, alignItems: 'flex-start', boxShadow: 'var(--shadow-sm)', transition: 'box-shadow 0.15s' }}>
-              <span style={{ fontSize: 28, flexShrink: 0 }}>{r.icon}</span>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4, lineHeight: 1.3 }}>{r.title}</div>
-                <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-                  {r.date} · {r.size}
-                  <span className="badge badge-info" style={{ marginLeft: 6, fontSize: 10 }}>{r.type}</span>
-                </div>
-                <button className="btn btn-primary btn-sm" style={{ marginTop: 10 }}>⬇ Pobierz</button>
+            <div key={r.title} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '16px', boxShadow: 'var(--shadow-sm)' }}>
+              <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6, lineHeight: 1.3 }}>{r.title}</div>
+              <div style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 10 }}>
+                {r.date} · {r.size} ·{' '}
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-muted)' }}>{r.type}</span>
               </div>
+              <button className="btn btn-outline btn-sm">Pobierz</button>
             </div>
           ))}
         </div>
@@ -100,7 +97,7 @@ export default function ReportsPage() {
       <div className="section">
         <div className="section-header">
           <h3 className="section-title">Raport zgodności pracowników</h3>
-          <button className="btn btn-outline btn-sm">⬇ Eksportuj CSV</button>
+          <button className="btn btn-outline btn-sm">Eksportuj CSV</button>
         </div>
         <div className="table-wrapper">
           <table className="data-table">
@@ -142,7 +139,7 @@ export default function ReportsPage() {
                     </td>
                     <td>
                       {emp.certificatesExpiring > 0
-                        ? <span className="badge badge-warning">⚠️ {emp.certificatesExpiring}</span>
+                        ? <span className="badge badge-warning">{emp.certificatesExpiring}</span>
                         : <span className="badge badge-success">0</span>
                       }
                     </td>

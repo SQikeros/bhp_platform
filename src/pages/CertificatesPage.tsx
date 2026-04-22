@@ -72,7 +72,7 @@ export default function CertificatesPage() {
               {currentUser.name} · {certificates.length} certyfikatów łącznie
             </p>
           </div>
-          <button className="btn btn-outline">Pobierz wszystkie (ZIP)</button>
+          <button className="btn btn-outline btn-sm">Pobierz wszystkie (ZIP)</button>
         </div>
       </div>
 

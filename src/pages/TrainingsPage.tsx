@@ -7,11 +7,11 @@ type FilterCategory = 'wszystkie' | TrainingCategory;
 type FilterStatus = 'wszystkie' | TrainingStatus;
 
 const categoryLabels: Record<FilterCategory, string> = {
-  wszystkie: 'Wszystkie kategorie',
-  biurowe: '🖥️ Biurowe',
-  fizyczne: '🏗️ Fizyczne',
-  kierownicze: '👔 Kierownicze',
-  specjalistyczne: '🔬 Specjalistyczne',
+  wszystkie: 'Wszystkie',
+  biurowe: 'Biurowe',
+  fizyczne: 'Fizyczne',
+  kierownicze: 'Kierownicze',
+  specjalistyczne: 'Specjalistyczne',
 };
 
 const statusLabels: Record<FilterStatus, string> = {
@@ -57,14 +57,14 @@ export default function TrainingsPage() {
       {/* Summary strip */}
       <div className="test-stats-grid" style={{ gap: 12, marginBottom: 24 }}>
         {[
-          { label: 'Wszystkich', value: counts.total, color: 'var(--info)', bg: 'var(--info-bg)' },
-          { label: 'W trakcie', value: counts.active, color: 'var(--accent)', bg: 'var(--accent-light)' },
-          { label: 'Ukończonych', value: counts.done, color: 'var(--success)', bg: 'var(--success-bg)' },
-          { label: 'Wygasłych', value: counts.expired, color: 'var(--danger)', bg: 'var(--danger-bg)' },
+          { label: 'Wszystkich', value: counts.total },
+          { label: 'W trakcie', value: counts.active },
+          { label: 'Ukończonych', value: counts.done },
+          { label: 'Wygasłych', value: counts.expired },
         ].map((s) => (
-          <div key={s.label} style={{ background: s.bg, borderRadius: 'var(--radius)', padding: '14px 16px', textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 30, fontWeight: 800, color: s.color, lineHeight: 1 }}>{s.value}</div>
-            <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 4 }}>{s.label}</div>
+          <div key={s.label} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '14px 16px', textAlign: 'center' }}>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1 }}>{s.value}</div>
+            <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 4 }}>{s.label}</div>
           </div>
         ))}
       </div>
@@ -76,7 +76,7 @@ export default function TrainingsPage() {
           <input
             type="text"
             className="form-input"
-            placeholder="🔍 Szukaj szkolenia..."
+            placeholder="Szukaj szkolenia..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             style={{ maxWidth: 260 }}

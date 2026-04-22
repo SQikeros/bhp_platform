@@ -8,10 +8,10 @@ const mockUsers = [
 ];
 
 const systemStats = [
-  { label: 'Użytkownicy', value: '247', icon: '👥', color: 'var(--info)' },
-  { label: 'Firmy', value: '38', icon: '🏢', color: 'var(--accent)' },
-  { label: 'Szkoleń', value: '1,204', icon: '📚', color: 'var(--success)' },
-  { label: 'Certyfikatów', value: '3,891', icon: '🏅', color: 'var(--warning)' },
+  { label: 'Użytkownicy', value: '247' },
+  { label: 'Firmy', value: '38' },
+  { label: 'Szkoleń', value: '1,204' },
+  { label: 'Certyfikatów', value: '3,891' },
 ];
 
 const roleBadge = (role: string) => {
@@ -39,17 +39,16 @@ export default function AdminPage() {
       </div>
 
       {/* Info banner */}
-      <div style={{ background: 'var(--info-bg)', border: '1px solid var(--info)', borderLeft: '4px solid var(--info)', borderRadius: 'var(--radius)', padding: '12px 16px', marginBottom: 24, fontSize: 13.5, color: '#1D4ED8' }}>
-        ℹ️ Ta sekcja prezentuje koncepcję panelu administracyjnego. W wersji produkcyjnej dostęp byłby ograniczony wyłącznie do administratorów systemu.
+      <div style={{ background: 'var(--bg-2)', border: '1px solid var(--border)', borderLeft: '3px solid var(--info)', borderRadius: 'var(--radius)', padding: '12px 16px', marginBottom: 24, fontSize: 13, color: 'var(--text-secondary)' }}>
+        Ta sekcja prezentuje koncepcję panelu administracyjnego. W wersji produkcyjnej dostęp byłby ograniczony wyłącznie do administratorów systemu.
       </div>
 
       {/* System stats */}
       <div className="test-stats-grid" style={{ gap: 14, marginBottom: 28 }}>
         {systemStats.map((s) => (
           <div key={s.label} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '18px 20px', boxShadow: 'var(--shadow-sm)' }}>
-            <div style={{ fontSize: 28, marginBottom: 10 }}>{s.icon}</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontSize: 32, fontWeight: 800, color: s.color, lineHeight: 1 }}>{s.value}</div>
-            <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.5, color: 'var(--text-muted)', marginTop: 4 }}>{s.label}</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 32, fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1 }}>{s.value}</div>
+            <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 6 }}>{s.label}</div>
           </div>
         ))}
       </div>
@@ -182,11 +181,11 @@ export default function AdminPage() {
           <div className="card">
             <div className="card-header"><span className="card-title">Akcje systemu</span></div>
             <div className="card-body" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>🔄 Wymuś synchronizację</button>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>📦 Backup bazy danych</button>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>📊 Generuj raport systemu</button>
-              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>📧 Wyślij newsletter</button>
-              <button className="btn btn-danger w-full" style={{ justifyContent: 'center', marginTop: 4 }}>⚠️ Tryb konserwacji</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Wymuś synchronizację</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Backup bazy danych</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Generuj raport systemu</button>
+              <button className="btn btn-outline w-full" style={{ justifyContent: 'center' }}>Wyślij newsletter</button>
+              <button className="btn btn-danger w-full" style={{ justifyContent: 'center', marginTop: 4 }}>Tryb konserwacji</button>
             </div>
           </div>
         </div>
